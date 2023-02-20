@@ -49,7 +49,7 @@ type INetworkValidSig = { name: NetworkNames; valid: boolean };
  * @param {string} walletAddress The signer address to verify the signature against
  * @param {number | BytesLike | Hexable} hash Hashed data used for the signature to verify. The dApp will need to pre-compute this as no hashing will occur in the function, and this will be directly used in isValidEip1271Signature
  * @param {string} signature The signature to verify as a hex string
- * @returns {Promise<INetworkSigValid>} INetworkSigValid is an object with keys being NetworkNames from etherspot
+ * @returns {Promise<INetworkSigValid>} INetworkValidSig is an array of objects { name: NetworksNames, valid: boolean }
  */
 export const isValidEip1271SignatureForAllNetworks = async (
   walletAddress: string,
