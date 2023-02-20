@@ -1,4 +1,35 @@
-import { NetworkNames } from "etherspot";
+export enum NetworkNames {
+  Mainnet = "mainnet",
+  Goerli = "goerli",
+  Xdai = "xdai",
+  Sokol = "sokol",
+  Bsc = "bsc",
+  BscTest = "bscTest",
+  Fantom = "fantom",
+  FantomTest = "fantomTest",
+  Matic = "matic",
+  Mumbai = "mumbai",
+  Aurora = "aurora",
+  AuroraTest = "auroraTest",
+  Avalanche = "avalanche",
+  Fuji = "fuji",
+  Optimism = "optimism",
+  Arbitrum = "arbitrum",
+  Moonbeam = "moonbeam",
+  Moonbase = "moonbase",
+  Celo = "celo",
+  CeloTest = "celoTest",
+  Etherspot = "etherspot",
+  Fuse = "fuse",
+  FuseSparknet = "fuseSparknet",
+  ArbitrumNova = "arbitrumNova",
+  ArbitrumNitro = "arbitrumNitro",
+  NeonDevnet = "neonDevnet",
+  OptimismGoerli = "optimismGoerli",
+  LocalA = "localA",
+  LocalB = "localB",
+  LocalH = "localH",
+}
 
 enum CHAIN_ID {
   ETHEREUM_MAINNET = 1,
@@ -32,7 +63,7 @@ export const supportedNetworks: ISupportedNetworks = {
   [CHAIN_ID.XDAI]: {
     id: CHAIN_ID.XDAI,
     name: NetworkNames.Xdai,
-    rpcUrl: "https://rpc.gnosischain.com/" + process.env.REACT_APP_INFURA_KEY,
+    rpcUrl: "https://rpc.gnosischain.com/",
   },
   [CHAIN_ID.BINANCE]: {
     id: CHAIN_ID.BINANCE,
