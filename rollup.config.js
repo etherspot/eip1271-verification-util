@@ -3,7 +3,6 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
-import replace from "@rollup/plugin-replace";
 import { terser } from "rollup-plugin-terser";
 import dotenv from "dotenv";
 import json from "@rollup/plugin-json";
@@ -43,10 +42,6 @@ export default [
         sourceMap: !isProduction,
         tsconfig: "./tsconfig.json",
         exclude: ["./example/**", "./src/test/**"],
-      }),
-      replace({
-        __ETHERSPOT_PROJECT_KEY__: process.env.ETHERSPOT_PROJECT_KEY ?? "",
-        preventAssignment: true,
       }),
       process.env.NODE_ENV === "production" && terser(),
       json(),
