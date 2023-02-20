@@ -8,7 +8,10 @@ Simple usage
 
 ```ts
 import ethers from "ethers";
-import { isValidEip1271Signature } from "@etherspot/eip1271-module";
+import {
+  isValidEip1271Signature,
+  isValidEip1271SignatureForAllNetworks,
+} from "@etherspot/eip1271-module";
 import { MNEMONIC, RPC } from "./constants";
 
 const checkSig = async () => {

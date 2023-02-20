@@ -7,7 +7,7 @@ import { abiEip1271Json, abiEip1271OldJson } from "@constants/abi";
 const isCaseInsensitiveMatch = (val1: string, val2: string) => val1.toLowerCase() === val2.toLowerCase();
 
 const createProvider = (rpcUrl: string) => {
-  const isWss = rpcUrl.substring(0, 3) === "wss";
+  const isWss = rpcUrl.startsWith("ws");
   if (isWss) return new ethers.providers.WebSocketProvider(rpcUrl);
   return new ethers.providers.JsonRpcProvider(rpcUrl);
 };
@@ -100,7 +100,7 @@ export const isValidEip1271SignatureForAllNetworks = async (
   const providers = await getProvidersFromRpcUrls(rpcUrls);
   const validProviders = providers.flatMap((f) => (!!f ? [f] : [])); // Filter out unrecognized provider urls
   const networkValidSignatures = await checkSignatureForAllProviders(validProviders, walletAddress, hash, signature);
-  return networkValidSignatures.flatMap((f) => (!!f ? [f] : [])); // Filter out failed attempts
+  return networkValidSignatures.flatMap((f) => (!!f?.chainId ? [f] : [])); // Filter out failed attempts
 };
 
 /**
@@ -117,5 +117,5 @@ export const isValidEip1271Signature = async (
   signature: string
 ): Promise<boolean> => {
   const validArr = await isValidEip1271SignatureForAllNetworks(rpcUrls, walletAddress, hash, signature);
-  return validArr.filter((item) => !!item.valid).length > 0;
+  return validArr.some((item) => !!item.valid);
 };
