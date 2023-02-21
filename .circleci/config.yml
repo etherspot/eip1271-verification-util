@@ -5,7 +5,7 @@ orbs:
 
 jobs:
   install:
-    working_directory: ~/eip1271-module
+    working_directory: ~/eip1271-verification-util
     docker:
       - image: cimg/node:16.19.0
         auth:
@@ -15,7 +15,7 @@ jobs:
       - checkout
       - run:
           name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$ETHERSPOT_NPM_TOKEN" > ~/eip1271-module/.npmrc
+          command: echo "//registry.npmjs.org/:_authToken=$ETHERSPOT_NPM_TOKEN" > ~/eip1271-verification-util/.npmrc
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
@@ -31,7 +31,7 @@ jobs:
           webhook: "${SLACK_WEBHOOK_URL}"
 
   publish:
-    working_directory: ~/eip1271-module
+    working_directory: ~/eip1271-verification-util
     docker:
       - image: circleci/node:16.3.0
         auth:
@@ -43,7 +43,7 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$ETHERSPOT_NPM_TOKEN" > ~/eip1271-module/.npmrc
+          command: echo "//registry.npmjs.org/:_authToken=$ETHERSPOT_NPM_TOKEN" > ~/eip1271-verification-util/.npmrc
       - run:
           name: Build Etherspot EIP1271 Module
           command: |

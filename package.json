@@ -1,9 +1,9 @@
 {
-  "name": "@etherspot/eip1271-module",
+  "name": "@etherspot/eip1271-verification-util",
   "version": "0.0.1",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
-  "repository": "https://github.com/etherspot/eip1271-module.git",
+  "repository": "https://github.com/etherspot/eip1271-verification-util.git",
   "author": "yash@pillarproject.io",
   "license": "MIT",
   "types": "dist/index.d.ts",
