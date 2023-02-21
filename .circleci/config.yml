@@ -45,7 +45,7 @@ jobs:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$ETHERSPOT_NPM_TOKEN" > ~/eip1271-module/.npmrc
       - run:
-          name: Build Etherpot EIP1271 Module
+          name: Build Etherspot EIP1271 Module
           command: |
             NODE_ENV=production npm run rollup:build
       - run:
