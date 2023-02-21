@@ -1,0 +1,23 @@
+# node.js
+#
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# OSX
+#
+.DS_STORE
+
+# IDE
+# 
+.vscode/
+
+# build
+.env
+build/
+dist/
+types/
+
+# src
+#
+src/configs/build-config.tsx
