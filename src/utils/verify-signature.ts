@@ -2,7 +2,7 @@ import "dotenv/config";
 import { ethers, utils, providers, ContractInterface, BytesLike } from "ethers";
 import { Hexable } from "ethers/lib/utils";
 
-import { abiEip1271Json, abiEip1271OldJson } from "@constants/abi";
+import { abiEip1271Json, abiEip1271OldJson } from "../constants/abi";
 
 const isCaseInsensitiveMatch = (val1: string, val2: string) => val1.toLowerCase() === val2.toLowerCase();
 
