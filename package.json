@@ -1,6 +1,6 @@
 {
   "name": "@etherspot/eip1271-verification-util",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "repository": "https://github.com/etherspot/eip1271-verification-util.git",
