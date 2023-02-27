@@ -109,11 +109,6 @@
     "outDir": "dist",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "emitDeclarationOnly": true,
-
-    "baseUrl": ".",
-    "paths": {
-      "@constants/*": ["src/constants/*"]
-    }
+    "emitDeclarationOnly": true
   }
 }
