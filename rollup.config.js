@@ -45,8 +45,7 @@ export default [
       }),
       process.env.NODE_ENV === "production" && terser(),
       json(),
-    ],
-    context: "window",
+    ]
   },
   {
     input: "dist/esm/types/index.d.ts",

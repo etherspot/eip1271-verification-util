@@ -20,8 +20,8 @@
     "ethers": "5.6.9"
   },
   "devDependencies": {
-    "@rollup/plugin-json": "6.0.0",
     "@rollup/plugin-commonjs": "22.0.0",
+    "@rollup/plugin-json": "6.0.0",
     "@rollup/plugin-node-resolve": "13.3.0",
     "@rollup/plugin-typescript": "8.3.3",
     "dotenv": "16.0.3",
@@ -29,6 +29,7 @@
     "rollup-plugin-dts": "4.2.2",
     "rollup-plugin-peer-deps-external": "2.2.4",
     "rollup-plugin-terser": "7.0.2",
+    "tslib": "^2.5.2",
     "typescript": "4.7.4"
   },
   "browser": {
