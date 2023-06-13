@@ -45,15 +45,12 @@ export default [
       }),
       process.env.NODE_ENV === "production" && terser(),
       json(),
-    ],
-    external: ["react", "react-dom", "styled-components", "etherspot"],
-    context: "window",
+    ]
   },
   {
     input: "dist/esm/types/index.d.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
     plugins: [dts(), json()],
-    external: ["react", "react-dom", "styled-components", "etherspot"],
     watch: {
       clearScreen: false,
       include: "src/**",
