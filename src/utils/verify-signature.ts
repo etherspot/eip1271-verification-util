@@ -1,4 +1,3 @@
-import "dotenv/config";
 import { ethers, utils, providers, ContractInterface, BytesLike } from "ethers";
 import { Hexable } from "ethers/lib/utils";
 
